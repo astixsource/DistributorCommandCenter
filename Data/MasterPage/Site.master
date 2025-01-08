@@ -1,0 +1,168 @@
+﻿<%@ Master Language="VB" CodeFile="Site.Master.vb" Inherits="Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=edge,chrome=1">
+    <link href="../Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <title>Distributor Command Center</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="../../CSS/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/style.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="../../Scripts/jquery-3.6.0.js" type="text/javascript"></script>
+    <script src="../../Scripts/popper.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/site-custom.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-ui.js" type="text/javascript"></script>
+    <style>
+        .dropdown {
+            max-height:500px;
+            overflow-y:auto;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onload = function () {
+        }
+        window.onunload = function () { null };
+
+
+        function fnAction(NodeId) {
+            var RoleId = $("#hdnRoleID").val();
+            switch (NodeId) {
+                case "22":
+                    window.location.href = "JBPData.aspx?id=" + NodeId;
+                    break;
+                case "23":
+                    window.location.href = "PrimaryStoremapping.aspx?id=" + NodeId;
+                    break;
+                case "24":
+                    window.location.href = "HawkeyeSubDTarget.aspx?id=" + NodeId;
+                    break;
+                case "25":
+                    window.location.href = "HawkeyeWSTarget.aspx?id=" + NodeId;
+                    break;
+                case "26":
+                    window.location.href = "UserMstr.aspx?id=" + NodeId;
+                    break;
+                case "30":
+                    window.location.href = "ChannelUpdate.aspx?id=" + NodeId;
+                    break;
+                case "32":
+                    window.location.href = "EmpMstrUpdate.aspx?id=" + NodeId;
+                    break;
+                case "33":
+                    window.location.href = "paymstrupdate.aspx?id=" + NodeId;
+                    break;
+                case "36":
+                    window.location.href = "SBFGroupMapping.aspx?id=" + NodeId;
+                    break;
+                case "38":
+                    window.location.href = "frmChannelChangeDate.aspx?id=" + NodeId;
+                    break;
+                case "39":
+                    window.location.href = "frmGenerateStoreExtract.aspx?id=" + NodeId;
+                    break;
+
+                default:
+                    //fnGotourl(NodeId);
+                    window.location.href = "Dashboard.aspx?id=" + NodeId;
+                    break;
+            }
+            return false;
+        }
+
+        function fnGotourl(id) {
+            
+            var $form = $("<form/>").attr("id", "data_form")
+                .attr("action", "Dashboard.aspx")
+                .attr("method", "post")
+            //.attr("target", "_self");
+            $("body").append($form);
+            //alert(id)
+            //Append the values to be send
+            AddParameter($form, "id", id);
+            $form[0].submit();
+        }
+        function AddParameter(form, name, value) {
+            var $input = $("<input />").attr("type", "hidden")
+                .attr("name", name)
+                .attr("value", value);
+            form.append($input);
+        }
+    </script>
+    <!-- For All Device Jquery -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file: -->
+    <!--[if lt IE 9]>
+  <script src="../../Scripts/html5shiv.min.js"></script>
+  <script src="../../Scripts/respond.min.js"></script>
+<![endif]-->
+</head>
+
+
+<body oncontextmenu="return false">
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+        </asp:ScriptManager>
+        <div class="site-background">
+            <img src="../../Images/bg.jpg" class="bg-img" />
+        </div>
+        <nav class="navbar fixed-top">
+            <div class="container">
+                <div class="card_item w-100">
+                    <div class="dropdown_block">
+                        <button type="button" class="menu-button">
+                            <i class="fa fa-navicon"></i>
+                        </button>
+                        <div class="dropdown" id="dropdown" runat="server" >                           
+                            <ul class="">
+                                <%--<li nid="8" onclick="fnAction('8')"><img src="../../Images/home_icon.svg" /><span id="8^20">Home</span></li>
+                                <li class="has-submenu"><span id="1^10">Journal Voucher</span></li>
+                                <li nid="3" onclick="fnAction('3')"><img src="../../Images/inprogress_icon.svg" />In-Process Workflow</li>
+                                <li nid="5" onclick="fnAction('5')"><img src="../../Images/pending_icon.svg" />Pending Approvals</li>
+                                <li nid="6" onclick="fnAction('6')"><img src="../../Images/history_icon.svg" />History</li>--%>
+                            </ul>                               
+                        </div>
+                        <asp:Image ID="imgLogo1" runat="server" Visible="false" ImageUrl="~/Images/P_G_logo.svg" alt="Logo" class="logo" />
+                    </div>
+
+                    <div class="d-block">
+                        <ul class="user_nav">
+                            <li>
+                                <a href="../Pages/ChangePassword.aspx?isf=0" title="Home" style="padding: 4px 8px;"><i class="fa fa-unlock-alt"></i></a>
+                            </li>
+                            <li>
+                                <a href="../Pages/Home.aspx" title="Change Password" style="padding: 4px 8px;"><i class="fa fa-home"></i></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkLogout" runat="server" class="fa fa-sign-out" rel="tooltip" data-placement="bottom" title="Click to logout" OnClick="lnkLogout_Click"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container main-content">
+            <asp:ContentPlaceHolder ID="ConatntMatter" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <asp:HiddenField ID="hdnRoleID" runat="server" />
+    </form>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files\microsoft visual studio\2022\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="17.0">
  <Targets>
-  <Target Name="C:\Users\Astix\AppData\Local\Temp\tmp3E93.tmp.cadir\bin\App_Code.dll">
+  <Target Name="C:\Users\Astix\AppData\Local\Temp\tmp9A3F.tmp.cadir\bin\App_Code.dll">
    <Modules>
     <Module Name="app_code.dll">
      <Namespaces>
@@ -12,28 +12,28 @@
          <Members>
           <Member Name="#ExecuteQueryProcedure(System.String,System.Data.SqlClient.SqlConnection,System.Collections.Generic.List`1&lt;System.Data.SqlClient.SqlParameter&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="a:\Web Appls\DCC\App_Code" File="clsDbCommand.cs" Line="27">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'clsDbCommand.ExecuteQueryProcedure(string, SqlConnection, List&lt;SqlParameter&gt;)' could contain the following variables 'storedProcName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExecuteQueryProcedure(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Collections.Generic.List`1&lt;System.Data.SqlClient.SqlParameter&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="a:\Web Appls\DCC\App_Code" File="clsDbCommand.cs" Line="78">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection, SqlTransaction)' in 'clsDbCommand.ExecuteQueryProcedure(string, SqlConnection, SqlTransaction, List&lt;SqlParameter&gt;)' could contain the following variables 'storedProcName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExecuteQueryReturnDataSet(System.String,System.Data.SqlClient.SqlConnection,System.Collections.Generic.List`1&lt;System.Data.SqlClient.SqlParameter&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="a:\Web Appls\DCC\App_Code" File="clsDbCommand.cs" Line="185">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'clsDbCommand.ExecuteQueryReturnDataSet(string, SqlConnection, List&lt;SqlParameter&gt;)' could contain the following variables 'storedProcName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ExecuteQueryReturnDataSet(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Collections.Generic.List`1&lt;System.Data.SqlClient.SqlParameter&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="a:\Web Appls\DCC\App_Code" File="clsDbCommand.cs" Line="130">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection, SqlTransaction)' in 'clsDbCommand.ExecuteQueryReturnDataSet(string, SqlConnection, SqlTransaction, List&lt;SqlParameter&gt;)' could contain the following variables 'storedProcName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -44,14 +44,14 @@
          <Members>
           <Member Name="#POST(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="NonBreaking">
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Error" Path="a:\Web Appls\DCC\App_Code" File="clsHttpRequest.cs" Line="27">'clsHttpRequest.POST(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SendNotification(System.String,System.String,System.String,System.String,System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="a:\Web Appls\DCC\App_Code" File="clsHttpRequest.cs" Line="77">Object 'dataStream' can be disposed more than once in method 'clsHttpRequest.SendNotification(string, string, string, string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 77</Issue>
             </Message>
            </Messages>
@@ -62,14 +62,14 @@
          <Members>
           <Member Name="#Decrypt(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="a:\Web Appls\DCC\App_Code" File="QueryStringModule.cs" Line="133">Object 'memoryStream' can be disposed more than once in method 'QueryStringModule.Decrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 133</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Encrypt(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="a:\Web Appls\DCC\App_Code" File="QueryStringModule.cs" Line="108">Object 'memoryStream' can be disposed more than once in method 'QueryStringModule.Encrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 108</Issue>
             </Message>
            </Messages>
@@ -82,9 +82,9 @@
     </Module>
    </Modules>
   </Target>
-  <Target Name="C:\Users\Astix\AppData\Local\Temp\tmp3E93.tmp.cadir\bin\App_Web_xgk34dtd.dll">
+  <Target Name="C:\Users\Astix\AppData\Local\Temp\tmp9A3F.tmp.cadir\bin\App_Web_2cfqklb0.dll">
    <Modules>
-    <Module Name="app_web_xgk34dtd.dll">
+    <Module Name="app_web_2cfqklb0.dll">
      <Namespaces>
       <Namespace Name="">
        <Types>
@@ -92,7 +92,7 @@
          <Members>
           <Member Name="#UploadData(System.Data.DataTable,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-09 10:27:18Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2025-01-10 06:13:23Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="a:\Web Appls\DCC" File="ExcelReadAndBulkCopyUpload.ashx" Line="267">Object 'Scon' can be disposed more than once in method 'ExcelReadAndBulkCopyUpload.UploadData(DataTable, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 267</Issue>
             </Message>
            </Messages>
@@ -110,7 +110,7 @@
   <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
    <Name>Do not dispose objects multiple times</Name>
    <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
-   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 108</Resolution>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 267</Resolution>
    <Owner>RuleOwner</Owner>
    <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
    <Email />

@@ -53,7 +53,7 @@ public partial class frmLogin : System.Web.UI.Page
             Scmd.CommandText = "spForgotPWD_ChangePassword";
             Scmd.CommandType = CommandType.StoredProcedure;
             Scmd.Parameters.AddWithValue("@UserID", hdnCode.Value);
-            Scmd.Parameters.AddWithValue("@Password", txtNewPassword.Text);
+            Scmd.Parameters.AddWithValue("@Password", HttpUtility.HtmlEncode(txtNewPassword.Text));
             Scmd.CommandTimeout = 0;
             SqlDataAdapter Sdap = new SqlDataAdapter(Scmd);
             DataSet Ds = new DataSet();

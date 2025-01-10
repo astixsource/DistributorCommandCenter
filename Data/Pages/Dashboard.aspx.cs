@@ -88,7 +88,7 @@ public partial class Data_Dashboard_Dashboard : System.Web.UI.Page
                         return;
                     }
                 }
-                else
+                else if (Session["token"] == null && IsRslapplied == false)
                 {
                     string accesstoken = obj.fnGetTokenNoForUser();
                     if (accesstoken.Split('|')[0] == "2")

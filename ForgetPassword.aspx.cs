@@ -31,7 +31,7 @@ public partial class frmLogin : System.Web.UI.Page
             Scmd.Connection = Scon;
             Scmd.CommandText = "spForgotPWD_GetLink";
             Scmd.CommandType = CommandType.StoredProcedure;
-            Scmd.Parameters.AddWithValue("@EmailID", txtEmail.Text);
+            Scmd.Parameters.AddWithValue("@EmailID", HttpUtility.HtmlEncode(txtEmail.Text));
             Scmd.CommandTimeout = 0;
             SqlDataAdapter Sdap = new SqlDataAdapter(Scmd);
             DataSet Ds = new DataSet();
@@ -45,7 +45,7 @@ public partial class frmLogin : System.Web.UI.Page
                 Param[0] = Ds.Tables[0].Rows[0]["strKey"].ToString();
                 Param[1] = Ds.Tables[0].Rows[0]["ValidTill"].ToString();
 
-                Mail.MailBody(hdnFlagType.Value, Ds.Tables[0].Rows[0]["UserName"].ToString(), Param, txtEmail.Text, "", "");
+                Mail.MailBody(hdnFlagType.Value, Ds.Tables[0].Rows[0]["UserName"].ToString(), Param, HttpUtility.HtmlEncode(txtEmail.Text), "", "");
 
                 txtEmail.Text = "";
                 dvMessage.InnerHtml = "Password reset link shared on your Registered Email-ID !";

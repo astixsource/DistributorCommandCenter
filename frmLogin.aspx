@@ -74,6 +74,7 @@
         </div>
 
         <input id="hdnResolution" type="hidden" runat="server" />
+        <input id="hiddenCSRFToken" type="hidden" runat="server" />
     </form>
 </body>
 </html>
